@@ -1,0 +1,26 @@
+# 👉 Archivos de configuración de IntelliJ IDEA
+.idea/
+*.iml
+
+# 👉 Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# 👉 Archivos de entorno
+.env
+
+# 👉 Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# 👉 Archivos de test y cobertura
+coverage/
+*.lcov
+
+# 👉 Otros archivos innecesarios
+*.log
+*.swp
+*.swo
