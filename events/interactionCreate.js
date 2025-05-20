@@ -11,7 +11,7 @@ export default async function interactionCreate(interaction, client) {
                 console.error(`No se encontró el comando ${interaction.commandName}`);
                 return interaction.reply({ 
                     content: '❌ Hubo un error al ejecutar este comando.', 
-                    ephemeral: true 
+                    withResponse: true
                 });
             }
 
@@ -21,7 +21,7 @@ export default async function interactionCreate(interaction, client) {
                 console.error(`Error al ejecutar el comando ${interaction.commandName}:`, error);
                 await interaction.reply({ 
                     content: '❌ Hubo un error al ejecutar este comando.', 
-                    ephemeral: true 
+                    withResponse: true
                 });
             }
             return;
@@ -35,7 +35,10 @@ export default async function interactionCreate(interaction, client) {
             );
 
             if (existing) {
-                return interaction.reply({ content: '❌ Ya tienes un ticket abierto.', ephemeral: true });
+                return interaction.reply({ 
+                    content: '❌ Ya tienes un ticket abierto.', 
+                    withResponse: true
+                });
             }
 
             const ticketChannel = await interaction.guild.channels.create({
@@ -68,19 +71,22 @@ export default async function interactionCreate(interaction, client) {
             });
 
             await ticketChannel.send(`🎟️ <@${interaction.user.id}> Un moderador atenderá tu solicitud pronto. Cierra el ticket con **closetickets`);
-            await interaction.reply({ content: `✅ Ticket creado: ${ticketChannel}`, ephemeral: true });
+            await interaction.reply({ 
+                content: `✅ Ticket creado: ${ticketChannel}`, 
+                withResponse: true
+            });
         }
     } catch (error) {
         console.error('Error en interactionCreate:', error);
         if (interaction.replied || interaction.deferred) {
             await interaction.followUp({ 
                 content: '❌ Hubo un error al procesar esta interacción.', 
-                ephemeral: true 
+                flags: MessageFlags.Ephemeral
             });
         } else {
             await interaction.reply({ 
                 content: '❌ Hubo un error al procesar esta interacción.', 
-                ephemeral: true 
+                withResponse: true
             });
         }
     }
