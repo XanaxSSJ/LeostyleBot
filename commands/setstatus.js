@@ -11,15 +11,15 @@ export default {
         const defaults = {
             playing: {
                 type: ActivityType.Playing,
-                text: 'Jugando a IntelliJ IDEA - Bot en Mantenimiento'
+                text: 'IntelliJ IDEA - Bot en Mantenimiento'
             },
             watching: {
                 type: ActivityType.Watching,
-                text: 'Viendo Tickets'
+                text: 'Revisando Tickets'
             },
             streaming: {
                 type: ActivityType.Streaming,
-                text: 'Viendo a Pelocuca en https://kick.com/leostyledota'
+                text: 'https://kick.com/leostyledota'
             },
             listening: {
                 type: ActivityType.Listening,

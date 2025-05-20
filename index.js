@@ -1,6 +1,7 @@
 import { Client, GatewayIntentBits, Partials } from 'discord.js';
 import commandHandler from './handlers/commandHandler.js';
 import eventHandler from './handlers/eventHandler.js';
+import slashCommandHandler from './handlers/slashCommandHandler.js';
 
 const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
@@ -8,6 +9,7 @@ const client = new Client({
 });
 
 commandHandler(client);
+slashCommandHandler(client);
 eventHandler(client);
 
 const token = process.env.DISCORD_TOKEN;
