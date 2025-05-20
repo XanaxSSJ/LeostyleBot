@@ -12,3 +12,10 @@ eventHandler(client);
 
 const token = process.env.DISCORD_TOKEN;
 client.login(token);
+
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => res.send("Bot activo"));
+const PORT = 8000;
+app.listen(PORT, () => console.log(`Servidor web activo en puerto ${PORT}`));
