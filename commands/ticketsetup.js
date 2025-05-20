@@ -15,7 +15,7 @@ export default {
         const shopRow = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
                 .setCustomId('create_ticket_shop')
-                .setLabel('🛍️ Comprar Items')
+                .setLabel('🛍️ Solicitar Items')
                 .setStyle(ButtonStyle.Success)
         );
 
@@ -30,7 +30,7 @@ export default {
         const shopEmbed = new EmbedBuilder()
             .setColor('#00ff00')
             .setTitle('🛍️ Sistema de Tickets Tienda')
-            .setDescription('Para realizar una compra, haz clic en el botón de abajo.')
+            .setDescription('Para pedir tu compra, haz clic en el botón de abajo.')
             .setFooter({ text: 'Solo se permite un ticket abierto por usuario' });
 
         // Enviar los mensajes en el canal correspondiente

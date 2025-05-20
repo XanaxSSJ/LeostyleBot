@@ -47,11 +47,11 @@ module.exports = {
             shop: {
                 button: {
                     customId: 'create_ticket_shop',
-                    label: '🛍️ Comprar Items',
+                    label: '🛍️ Solicitar Items',
                     style: ButtonStyle.Success,
                     color: '#00ff00',
                     title: '🛍️ Sistema de Tickets Tienda',
-                    description: 'Para realizar una compra, haz clic en el botón de abajo.'
+                    description: 'Para reclamar una compra de la tienda de Kick, haz clic en el botón de abajo.'
                 }
             }
         };
