@@ -39,7 +39,7 @@ export default async function interactionCreate(interaction, client) {
             'create_ticket_shop': {
                 categoryId: config.ticketShopCategoryId,
                 channelName: `tienda-${interaction.user.username}`,
-                initialMessage: '🛍️ Un moderador atenderá tu solicitud de tienda pronto.'
+                initialMessage: '🛍️ Escribe lo que canjeaste en la tienda y un moderador atenderá tu solicitud pronto.'
             }
         };
 
